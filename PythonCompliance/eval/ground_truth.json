@@ -1,0 +1,77 @@
+{
+    "food/product01.jpg": {
+        "mrp": "199.00",
+        "net_quantity": "400 g",
+        "manufacturing_date": "01/04/2025",
+        "manufacturer_name": "ABC Food Co"
+    },
+    "food/product02.jpg": {
+        "net_quantity": "510 g"
+    },
+    "food/product03.jpg": {
+        "mrp": "24",
+        "net_quantity": "50 g"
+    },
+    "cosmetics/cos1.jpg": {
+        "category": {
+            "value": "Cosmetics",
+            "status": "VERIFIED"
+        },
+        "product_name": {
+            "value": "Oral-B",
+            "status": "VERIFIED"
+        },
+        "mrp": {
+            "value": "22.00",
+            "status": "VERIFIED"
+        },
+        "net_quantity": {
+            "value": null,
+            "status": "NOT_PRESENT"
+        },
+        "manufacturing_date": {
+            "value": "07/2026",
+            "status": "VERIFIED"
+        },
+        "manufacturer_name": {
+            "value": "A. RISLTO ENTERPRISES PRIVATE LIMITED",
+            "status": "VERIFIED"
+        },
+        "manufacturer_address": {
+            "value": "Vandalur - Kelambakkam Road , Melakottaiyur,Chennai - 600127,Tamilnadu India",
+            "status": "VERIFIED"
+        },
+        "packer_name": {
+            "value": null,
+            "status": "NOT_PRESENT"
+        },
+        "packer_address": {
+            "value": null,
+            "status": "NOT_PRESENT"
+        },
+        "importer_name": {
+            "value": null,
+            "status": "NOT_PRESENT"
+        },
+        "importer_address": {
+            "value": null,
+            "status": "NOT_PRESENT"
+        },
+        "consumer_care_name": {
+            "value": null,
+            "status": "NOT_PRESENT"
+        },
+        "consumer_care_address": {
+            "value": null,
+            "status": "UNREADABLE"
+        },
+        "consumer_care_phone": {
+            "value": "1800-202-1364",
+            "status": "VERIFIED"
+        },
+        "consumer_care_email": {
+            "value": "intouch.im@pg.com",
+            "status": "VERIFIED"
+        }
+    }
+}

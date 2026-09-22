@@ -1,0 +1,43 @@
+# Environments
+.venv/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Model Caches
+~/.paddleocr/
+.paddleocr/
+models/
+
+# Images and Data
+!data/test_images/.gitkeep
+data/outputs/*
+!data/outputs/.gitkeep
+!data/outputs/*.json
+*.jpg
+*.jpeg
+*.png
+
+# Logs
+*.log
+logs/
+
+# Testing
+.pytest_cache/
+coverage.xml
+
+# IDE
+.vscode/
+.idea/
+!data/test_images/**/
+!data/test_images/**/*.jpg
+!data/test_images/**/*.jpeg
+!data/test_images/**/*.png

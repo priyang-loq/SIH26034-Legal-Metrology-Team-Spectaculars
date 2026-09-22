@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --paper-bg: #F3F6FB;
+    --paper-surface: #EEF2F8;
+    --paper-card: #FFFFFF;
+    --ink-deep: #14224A;
+    --ink-muted: #5B6B84;
+    --ink-faint: #8B99B0;
+    --pass-green: #1B7A43;
+    --pass-light: #E7F5EC;
+    --fail-red: #B42318;
+    --fail-light: #FCEAE8;
+    --scan-amber: #B45309;
+    --scan-light: #FDF3D8;
+    --ruler-border: #D6DEEA;
+  }
+
+  body {
+    background-color: var(--paper-bg);
+    color: var(--ink-deep);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-mono, code, pre, .font-data {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Ruler tick borders */
+.ruler-border-top {
+  background-image: linear-gradient(to right, #14224A 1px, transparent 1px);
+  background-size: 12px 6px;
+  background-repeat: repeat-x;
+  background-position: top;
+}
+
+.ruler-border-dashed {
+  background-image: 
+    repeating-linear-gradient(0deg, #8B99B0, #8B99B0 6px, transparent 6px, transparent 12px),
+    repeating-linear-gradient(90deg, #8B99B0, #8B99B0 6px, transparent 6px, transparent 12px),
+    repeating-linear-gradient(180deg, #8B99B0, #8B99B0 6px, transparent 6px, transparent 12px),
+    repeating-linear-gradient(270deg, #8B99B0, #8B99B0 6px, transparent 6px, transparent 12px);
+  background-size: 1.5px 100%, 100% 1.5px, 1.5px 100% , 100% 1.5px;
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+  background-repeat: no-repeat;
+}
+
+/* Ledger paper horizontal subtle lines */
+.ledger-lines {
+  background-image: linear-gradient(to bottom, transparent 95%, rgba(20, 34, 74, 0.05) 95%);
+  background-size: 100% 28px;
+}
+
+/* Measurement grid texture */
+.blueprint-grid {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(20, 34, 74, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 34, 74, 0.04) 1px, transparent 1px);
+}
+
+/* Stamp styling */
+.stamp-badge {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 3px;
+  border-style: double;
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 85%, rgba(0,0,0,0.8) 100%);
+}
+
+.stamp-pass {
+  color: #1B7A43;
+  border-color: #1B7A43;
+  background-color: rgba(27, 122, 67, 0.06);
+}
+
+.stamp-fail {
+  color: #B42318;
+  border-color: #B42318;
+  background-color: rgba(180, 35, 24, 0.06);
+}
+
+.stamp-amber {
+  color: #B45309;
+  border-color: #B45309;
+  background-color: rgba(180, 83, 9, 0.06);
+}
+
+/* Animated laser scan line */
+@keyframes sweepScan {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 96%;
+    opacity: 0.8;
+  }
+}
+
+.animate-scan-sweep {
+  animation: sweepScan 2s ease-in-out infinite alternate;
+}
+
+/* Pulsing radar dot */
+@keyframes radarPing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.animate-radar {
+  animation: radarPing 2.5s ease-in-out infinite;
+}

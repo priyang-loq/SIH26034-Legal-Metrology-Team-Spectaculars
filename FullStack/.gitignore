@@ -1,0 +1,21 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+!server/.env.example
+
+# SQLite runtime journal files
+server/*.db-wal
+server/*.db-shm
+
+# Server runtime uploads, generated reports, and temporary files
+server/uploads/
+server/reports/
+server/tmp/*
+!server/tmp/.gitkeep
+
+server/data/raw_extractions/

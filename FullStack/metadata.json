@@ -1,0 +1,6 @@
+{
+  "name": "Legal Metrology Compliance Inspector (LMPC 2011)",
+  "description": "Packaged product label compliance inspector under India's Legal Metrology (Packaged Commodities) Rules, 2011 featuring regulator analytics, seller verification, and consumer scanning.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
