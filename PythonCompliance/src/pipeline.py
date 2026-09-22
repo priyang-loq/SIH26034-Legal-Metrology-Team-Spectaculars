@@ -113,6 +113,19 @@ class OCRPipeline:
                 vlm_dict = vlm_engine.extract(image_path, ocr_result)
                 vlm_fields = parse_vlm_response(vlm_dict)
 
+                # V2 hallucination protection: wipe out ungrounded dates before fusion
+                if ocr_result and ocr_result.results:
+                    ocr_full_text = "".join(r.text for r in ocr_result.results).lower().replace(" ", "")
+                    import re
+                    from src.extract.schema import ExtractionStatus
+                    for k in ["manufacturing_date", "expiry_date"]:
+                        vlm_f = getattr(vlm_fields, k)
+                        if vlm_f.status == ExtractionStatus.FOUND and vlm_f.extracted_value:
+                            vlm_clean = re.sub(r'^[#\s]+', '', str(vlm_f.extracted_value)).rstrip('.,; ').lower().replace(' ', '')
+                            if vlm_clean and vlm_clean not in ocr_full_text:
+                                vlm_f.status = ExtractionStatus.NOT_FOUND
+                                vlm_f.extracted_value = None
+
                 logger.info("Fusing OCR and VLM results...")
                 structured_data.fields = fuse_results(structured_data.fields, vlm_fields)
             except Exception as e:

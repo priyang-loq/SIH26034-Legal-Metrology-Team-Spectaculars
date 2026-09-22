@@ -18,6 +18,7 @@ ENV/
 models/
 
 # Images and Data
+data/test_images/*
 !data/test_images/.gitkeep
 data/outputs/*
 !data/outputs/.gitkeep
@@ -37,7 +38,3 @@ coverage.xml
 # IDE
 .vscode/
 .idea/
-!data/test_images/**/
-!data/test_images/**/*.jpg
-!data/test_images/**/*.jpeg
-!data/test_images/**/*.png
